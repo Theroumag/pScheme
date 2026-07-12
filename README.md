@@ -3,10 +3,6 @@
 
 This project implements the core interpreter for a Scheme language in Java. It provides a complete environment for evaluating Scheme expressions, including arithmetic operations, boolean logic, list manipulation, and function definitions. The implementation includes a robust REPL (Read-Eval-Print Loop) that can process both file input and interactive commands.
 
-## Author  
-**Karl Schreyer**  
-📧 schreyk206@potsdam.edu  
-
 ## Course Information  
 **Course:** CIS 443 - Programming Languages  
 **Assignment:** pScheme  
