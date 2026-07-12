@@ -1,0 +1,58 @@
+// https://www.scheme.com/tspl2d/grammar.html
+// https://www.cs.cmu.edu/Groups/AI/html/r4rs/r4rs_9.html
+
+<program>        => <form>* EOFToken
+
+<form>           => <definition>
+                  |  <expression>
+
+<definition>     => ( define <symbol> <expression> )
+                  |  ( define ( <symbol> <def-formals> ) <expression> )
+                  |  ( begin <definition>* )
+
+
+
+<expression>     => <symbol>
+                  |  <literal>
+                  |  <lambda>
+                  |  <conditional>
+                  |  <application>
+
+
+<lambda>         => ( lambda ( <symbol>* ) <body> )
+<conditional>    => ( if <test> <consequent> <alternative> )
+<application>    => ( <operator> <operand>* )
+
+<symbol>         => variable_name
+
+<literal>        => <quotation>
+                  |  <integer>
+                  |  <boolean>
+
+<def-formals>    => <symbol>*
+// <expression>* <expression> == <expression>+ BUT the last
+// expression is necessary
+<body>           => <definition>* <expression>* <expression>
+
+<test>           => <expression>
+<consequent>     => <expression>
+<alternative>    => <expression>
+                  |  <>
+
+<operator>       => <expression>
+<operand>        => <expression>
+
+<quotation>      => ( quote <expression> )
+                  |  '<expression>
+
+<integer>        => int_value
+<boolean>        => #f | #t
+
+-------------------------------------------------------------------------------
+<form>  =>
+
+  ( <some-list-thing> )
+  '<expression>
+  <boolean>
+  <integer>
+  <symbol>
